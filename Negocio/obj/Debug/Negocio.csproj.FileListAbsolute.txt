@@ -1,0 +1,11 @@
+C:\Users\Marec\source\repos\Minimarket\Negocio\bin\Debug\Negocio.dll
+C:\Users\Marec\source\repos\Minimarket\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Marec\source\repos\Minimarket\Negocio\bin\Debug\Datos.dll
+C:\Users\Marec\source\repos\Minimarket\Negocio\bin\Debug\Entidades.dll
+C:\Users\Marec\source\repos\Minimarket\Negocio\bin\Debug\Datos.pdb
+C:\Users\Marec\source\repos\Minimarket\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Marec\source\repos\Minimarket\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Marec\source\repos\Minimarket\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Marec\source\repos\Minimarket\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Marec\source\repos\Minimarket\Negocio\obj\Debug\Negocio.dll
+C:\Users\Marec\source\repos\Minimarket\Negocio\obj\Debug\Negocio.pdb

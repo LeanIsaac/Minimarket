@@ -1,0 +1,17 @@
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Minimarket.Presentacion.exe.config
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Minimarket.Presentacion.exe
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Minimarket.Presentacion.pdb
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Entidades.dll
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Negocio.dll
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Negocio.pdb
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.csproj.AssemblyReference.cache
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.Frm_Categorias.resources
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.Properties.Resources.resources
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.csproj.GenerateResource.cache
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.csproj.CopyComplete
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.exe
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\obj\Debug\Minimarket.Presentacion.pdb
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Datos.dll
+C:\Users\Marec\source\repos\Minimarket\Minimarket.Presentacion\bin\Debug\Datos.pdb

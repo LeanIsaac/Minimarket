@@ -1,0 +1,9 @@
+C:\Users\Marec\source\repos\Minimarket\Datos\bin\Debug\Datos.dll
+C:\Users\Marec\source\repos\Minimarket\Datos\bin\Debug\Datos.pdb
+C:\Users\Marec\source\repos\Minimarket\Datos\bin\Debug\Entidades.dll
+C:\Users\Marec\source\repos\Minimarket\Datos\bin\Debug\Entidades.pdb
+C:\Users\Marec\source\repos\Minimarket\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Marec\source\repos\Minimarket\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Marec\source\repos\Minimarket\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\Marec\source\repos\Minimarket\Datos\obj\Debug\Datos.dll
+C:\Users\Marec\source\repos\Minimarket\Datos\obj\Debug\Datos.pdb

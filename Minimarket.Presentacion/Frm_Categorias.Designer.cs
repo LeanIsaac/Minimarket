@@ -35,15 +35,16 @@
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txt_Categoria = new System.Windows.Forms.TextBox();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.txt_descripcion_ca = new System.Windows.Forms.TextBox();
             this.lbl_Categoria = new System.Windows.Forms.Label();
             this.btn_Nuevo = new System.Windows.Forms.Button();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Reporte = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
-            this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_Retornar = new System.Windows.Forms.Button();
             this.tbp_Principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pricipal)).BeginInit();
@@ -112,9 +113,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btn_Retornar);
             this.tabPage2.Controls.Add(this.btn_Guardar);
             this.tabPage2.Controls.Add(this.btn_Cancelar);
-            this.tabPage2.Controls.Add(this.txt_Categoria);
+            this.tabPage2.Controls.Add(this.txt_descripcion_ca);
             this.tabPage2.Controls.Add(this.lbl_Categoria);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -124,21 +126,42 @@
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txt_Categoria
+            // btn_Guardar
             // 
-            this.txt_Categoria.Location = new System.Drawing.Point(108, 55);
-            this.txt_Categoria.Name = "txt_Categoria";
-            this.txt_Categoria.Size = new System.Drawing.Size(231, 20);
-            this.txt_Categoria.TabIndex = 1;
+            this.btn_Guardar.Location = new System.Drawing.Point(221, 94);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Guardar.TabIndex = 3;
+            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Location = new System.Drawing.Point(140, 94);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.TabIndex = 2;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // txt_descripcion_ca
+            // 
+            this.txt_descripcion_ca.Location = new System.Drawing.Point(121, 52);
+            this.txt_descripcion_ca.Name = "txt_descripcion_ca";
+            this.txt_descripcion_ca.ReadOnly = true;
+            this.txt_descripcion_ca.Size = new System.Drawing.Size(231, 20);
+            this.txt_descripcion_ca.TabIndex = 1;
             // 
             // lbl_Categoria
             // 
             this.lbl_Categoria.AutoSize = true;
             this.lbl_Categoria.Location = new System.Drawing.Point(47, 55);
             this.lbl_Categoria.Name = "lbl_Categoria";
-            this.lbl_Categoria.Size = new System.Drawing.Size(55, 13);
+            this.lbl_Categoria.Size = new System.Drawing.Size(68, 13);
             this.lbl_Categoria.TabIndex = 0;
-            this.lbl_Categoria.Text = "Categoria:";
+            this.lbl_Categoria.Text = "Categoria (*):";
             // 
             // btn_Nuevo
             // 
@@ -148,6 +171,7 @@
             this.btn_Nuevo.TabIndex = 1;
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = true;
+            this.btn_Nuevo.Click += new System.EventHandler(this.btn_Nuevo_Click);
             // 
             // btn_Actualizar
             // 
@@ -157,6 +181,7 @@
             this.btn_Actualizar.TabIndex = 2;
             this.btn_Actualizar.Text = "Actualizar";
             this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
             // btn_Eliminar
             // 
@@ -185,23 +210,15 @@
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;
             // 
-            // btn_Cancelar
+            // btn_Retornar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(140, 94);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancelar.TabIndex = 2;
-            this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.Location = new System.Drawing.Point(221, 94);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Guardar.TabIndex = 3;
-            this.btn_Guardar.Text = "Guardar";
-            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Retornar.Location = new System.Drawing.Point(302, 94);
+            this.btn_Retornar.Name = "btn_Retornar";
+            this.btn_Retornar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Retornar.TabIndex = 4;
+            this.btn_Retornar.Text = "Retornar";
+            this.btn_Retornar.UseVisualStyleBackColor = true;
+            this.btn_Retornar.Visible = false;
             // 
             // Frm_Categorias
             // 
@@ -241,10 +258,11 @@
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.TextBox txt_Buscar;
         private System.Windows.Forms.Label lbl_Buscar;
-        private System.Windows.Forms.TextBox txt_Categoria;
+        private System.Windows.Forms.TextBox txt_descripcion_ca;
         private System.Windows.Forms.Label lbl_Categoria;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Retornar;
     }
 }
 

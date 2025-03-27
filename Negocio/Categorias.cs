@@ -17,5 +17,13 @@ namespace Negocio
             D_Categorias Datos = new D_Categorias();
             return Datos.Listado_ca(cTexto);
         }
+
+        public static string Guardar_ca(int nOpcion, Entidades.Categorias oCa)
+        {
+            D_Categorias Datos = new D_Categorias();
+            return Datos.Guardar_ca(nOpcion,oCa);
+        }
     }
+
+    
 }

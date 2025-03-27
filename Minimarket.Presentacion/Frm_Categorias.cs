@@ -18,6 +18,9 @@ namespace Minimarket.Presentacion
         {
             InitializeComponent();
         }
+        #region Mis Variables
+        int estadoGuarda = 0; //sin ninguna accion;
+        #endregion
 
         #region Mis Métodos
 
@@ -42,11 +45,87 @@ namespace Minimarket.Presentacion
             }
         }
 
+        private void Estado_BotonesPrincipales(bool lEstado)
+        {
+            this.btn_Nuevo.Enabled = lEstado;
+            this.btn_Actualizar.Enabled = lEstado;
+            this.btn_Eliminar.Enabled = lEstado;
+            this.btn_Reporte.Enabled = lEstado;
+            this.btn_Salir.Enabled = lEstado;
+        }
+
+        private void Estado_BotonesProceso(bool lEstado)
+        {
+            this.btn_Cancelar.Visible = lEstado;
+            this.btn_Guardar.Visible = lEstado;
+            this.btn_Retornar.Visible = !lEstado;
+        }
+
         #endregion
 
         private void Frm_Categorias_Load(object sender, EventArgs e)
         {
             this.Listado_ca("%");
+        }
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            if(txt_descripcion_ca.Text == String.Empty)
+            {
+                MessageBox.Show("Ingrese datos requeridos (*)", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else // se registra la informacion
+            {
+                Entidades.Categorias oCa = new Entidades.Categorias();
+                string rto = "";
+                oCa.Codigo_ca = 0;
+                oCa.Descripcion_ca = txt_descripcion_ca.Text.Trim();
+                rto = Negocio.Categorias.Guardar_ca(estadoGuarda, oCa);
+
+                if(rto == "OK")
+                {
+                    this.Listado_ca("%");//Actualiza la lista
+                    MessageBox.Show("Los datos has sido guardados correctamente", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    estadoGuarda = 0; //Sin ninguna accion
+                    this.Estado_BotonesPrincipales(true);
+                    this.Estado_BotonesProceso(false);
+                    txt_descripcion_ca.Text = "";
+                    txt_descripcion_ca.ReadOnly = true;
+                    tbp_Principal.SelectedIndex = 0;
+                    
+                }
+                else
+                {
+                    MessageBox.Show(rto, "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btn_Nuevo_Click(object sender, EventArgs e)
+        {
+            estadoGuarda = 1; //Nuevo registro
+            this.Estado_BotonesPrincipales(false);
+            this.Estado_BotonesProceso(true);
+            txt_descripcion_ca.Text = "";
+            txt_descripcion_ca.ReadOnly = false;
+            tbp_Principal.SelectedIndex = 1;
+            txt_descripcion_ca.Focus();
+        }
+
+        private void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            estadoGuarda = 2; //Actualizar registro
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            estadoGuarda = 0; //sin ninguna accion
+            txt_descripcion_ca.Text = "";
+            txt_descripcion_ca.ReadOnly = true;
+            this.Estado_BotonesPrincipales(true);
+            this.Estado_BotonesProceso(false);
+            tbp_Principal.SelectedIndex = 0;
         }
     }
 }

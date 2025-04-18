@@ -20,6 +20,7 @@ namespace Minimarket.Presentacion
         }
         #region Mis Variables
         int estadoGuarda = 0; //sin ninguna accion;
+        int codigo_ca = 0; //guarde la info del codigo del registro seleccionado
         #endregion
 
         #region Mis Métodos
@@ -61,6 +62,20 @@ namespace Minimarket.Presentacion
             this.btn_Retornar.Visible = !lEstado;
         }
 
+        private void Selecciona_Item()
+        {
+            //selecciona el contenido que tenga la columna codigo_ca
+            if(string.IsNullOrEmpty(Convert.ToString(dgv_Pricipal.CurrentRow.Cells["codigo_ca"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para Visualizar","Aviso del Sistema",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.codigo_ca = Convert.ToInt32(dgv_Pricipal.CurrentRow.Cells["codigo_ca"].Value);
+                txt_descripcion_ca.Text = Convert.ToString( dgv_Pricipal.CurrentRow.Cells["descripcion_ca"].Value);
+            }
+        }
+
         #endregion
 
         private void Frm_Categorias_Load(object sender, EventArgs e)
@@ -78,7 +93,7 @@ namespace Minimarket.Presentacion
             {
                 Entidades.Categorias oCa = new Entidades.Categorias();
                 string rto = "";
-                oCa.Codigo_ca = 0;
+                oCa.Codigo_ca = this.codigo_ca;
                 oCa.Descripcion_ca = txt_descripcion_ca.Text.Trim();
                 rto = Negocio.Categorias.Guardar_ca(estadoGuarda, oCa);
 
@@ -93,6 +108,7 @@ namespace Minimarket.Presentacion
                     txt_descripcion_ca.Text = "";
                     txt_descripcion_ca.ReadOnly = true;
                     tbp_Principal.SelectedIndex = 0;
+                    this.codigo_ca = 0;
                     
                 }
                 else
@@ -116,6 +132,12 @@ namespace Minimarket.Presentacion
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
             estadoGuarda = 2; //Actualizar registro
+            this.Estado_BotonesPrincipales(false);
+            this.Estado_BotonesProceso(true);
+            this.Selecciona_Item();
+            tbp_Principal.SelectedIndex = 1;
+            txt_descripcion_ca.ReadOnly = false;
+            txt_descripcion_ca.Focus();
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
@@ -124,6 +146,19 @@ namespace Minimarket.Presentacion
             txt_descripcion_ca.Text = "";
             txt_descripcion_ca.ReadOnly = true;
             this.Estado_BotonesPrincipales(true);
+            this.Estado_BotonesProceso(false);
+            tbp_Principal.SelectedIndex = 0;
+        }
+
+        private void dgv_Pricipal_DoubleClick(object sender, EventArgs e)
+        {
+            this.Selecciona_Item();
+            this.Estado_BotonesProceso(false);
+            tbp_Principal.SelectedIndex = 1; //se activa la pestaña del marco d pagina en mantenimiento
+        }
+
+        private void btn_Retornar_Click(object sender, EventArgs e)
+        {
             this.Estado_BotonesProceso(false);
             tbp_Principal.SelectedIndex = 0;
         }
